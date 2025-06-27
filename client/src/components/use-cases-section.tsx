@@ -29,7 +29,7 @@ const useCases = [
     iconBg: "bg-secondary"
   },
   {
-    icon: "fas fa-code-branch",
+    icon: "fas fa-drafting-compass",
     title: "Design Systems",
     description: "Build and iterate on wireframes, user flows, and design concepts together.",
     tags: ["UX Teams", "Design"],

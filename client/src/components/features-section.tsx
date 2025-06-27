@@ -20,7 +20,7 @@ const features = [
     gradient: "from-secondary to-accent"
   },
   {
-    icon: "fas fa-layer-group",
+    icon: "fas fa-expand-arrows-alt",
     title: "Infinite Canvas",
     description: "Never run out of space. Pan, zoom, and explore your ideas without boundaries.",
     gradient: "from-success to-primary"
