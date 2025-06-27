@@ -4,7 +4,6 @@ import HeroSection from "@/components/hero-section";
 import FeaturesSection from "@/components/features-section";
 import DemoSection from "@/components/demo-section";
 import UseCasesSection from "@/components/use-cases-section";
-
 import ContactSection from "@/components/contact-section";
 
 export default function Landing() {
