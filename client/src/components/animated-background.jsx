@@ -1,135 +1,140 @@
 import { motion } from "framer-motion";
 
 export default function AnimatedBackground() {
-  const squares = Array.from({ length: 15 }, (_, i) => ({
+  const floatingElements = Array.from({ length: 8 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    delay: Math.random() * 2,
-    duration: 10 + Math.random() * 5,
+    delay: Math.random() * 4,
+    duration: 15 + Math.random() * 10,
+    size: 20 + Math.random() * 40,
   }));
 
-  const triangles = Array.from({ length: 10 }, (_, i) => ({
+  const particles = Array.from({ length: 12 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
     delay: Math.random() * 3,
-    duration: 8 + Math.random() * 4,
+    duration: 8 + Math.random() * 6,
   }));
 
-  const dots = Array.from({ length: 25 }, (_, i) => ({
+  const gradientOrbs = Array.from({ length: 5 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    delay: Math.random() * 2,
-    duration: 6 + Math.random() * 3,
-  }));
-
-  const circles = Array.from({ length: 12 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    delay: Math.random() * 2.5,
-    duration: 12 + Math.random() * 6,
+    delay: Math.random() * 5,
+    duration: 20 + Math.random() * 15,
+    size: 100 + Math.random() * 200,
   }));
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Rotating squares */}
-      {squares.map((square) => (
+      {/* Large gradient orbs */}
+      {gradientOrbs.map((orb) => (
         <motion.div
-          key={`square-${square.id}`}
-          className="absolute w-4 h-4 bg-blue-200/20 border border-blue-300/30"
+          key={`orb-${orb.id}`}
+          className="absolute rounded-full opacity-[0.03] blur-3xl"
           style={{
-            left: `${square.x}%`,
-            top: `${square.y}%`,
+            left: `${orb.x}%`,
+            top: `${orb.y}%`,
+            width: `${orb.size}px`,
+            height: `${orb.size}px`,
+            background: `linear-gradient(45deg, 
+              hsl(${200 + orb.id * 30}, 70%, 60%), 
+              hsl(${250 + orb.id * 25}, 80%, 65%)
+            )`,
           }}
           animate={{
-            rotate: [0, 360],
-            scale: [0.8, 1.2, 0.8],
-            opacity: [0.3, 0.7, 0.3],
-          }}
-          transition={{
-            duration: square.duration,
-            delay: square.delay,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      ))}
-
-      {/* Floating triangles */}
-      {triangles.map((triangle) => (
-        <motion.div
-          key={`triangle-${triangle.id}`}
-          className="absolute w-0 h-0"
-          style={{
-            left: `${triangle.x}%`,
-            top: `${triangle.y}%`,
-            borderLeft: "8px solid transparent",
-            borderRight: "8px solid transparent",
-            borderBottom: "12px solid rgba(34, 197, 94, 0.2)",
-          }}
-          animate={{
-            y: [-10, 10, -10],
-            rotate: [0, 180, 360],
-            opacity: [0.2, 0.6, 0.2],
-          }}
-          transition={{
-            duration: triangle.duration,
-            delay: triangle.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-
-      {/* Floating dots */}
-      {dots.map((dot) => (
-        <motion.div
-          key={`dot-${dot.id}`}
-          className="absolute w-2 h-2 bg-purple-300/40 rounded-full"
-          style={{
-            left: `${dot.x}%`,
-            top: `${dot.y}%`,
-          }}
-          animate={{
+            x: [-30, 30, -30],
             y: [-20, 20, -20],
-            x: [-5, 5, -5],
-            scale: [0.5, 1, 0.5],
-            opacity: [0.3, 0.8, 0.3],
+            scale: [0.8, 1.2, 0.8],
           }}
           transition={{
-            duration: dot.duration,
-            delay: dot.delay,
+            duration: orb.duration,
+            delay: orb.delay,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
       ))}
 
-      {/* Pulsing circles */}
-      {circles.map((circle) => (
+      {/* Floating geometric elements */}
+      {floatingElements.map((element) => (
         <motion.div
-          key={`circle-${circle.id}`}
-          className="absolute w-6 h-6 border-2 border-orange-300/30 rounded-full"
+          key={`element-${element.id}`}
+          className="absolute opacity-[0.08]"
           style={{
-            left: `${circle.x}%`,
-            top: `${circle.y}%`,
+            left: `${element.x}%`,
+            top: `${element.y}%`,
           }}
           animate={{
+            y: [-40, 40, -40],
+            x: [-20, 20, -20],
+            rotate: [0, 360],
             scale: [0.5, 1.5, 0.5],
-            opacity: [0.2, 0.5, 0.2],
-            rotate: [0, -360],
           }}
           transition={{
-            duration: circle.duration,
-            delay: circle.delay,
+            duration: element.duration,
+            delay: element.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          {element.id % 3 === 0 && (
+            <div 
+              className="rounded-lg bg-gradient-to-br from-blue-400 to-purple-500"
+              style={{ width: `${element.size}px`, height: `${element.size}px` }}
+            />
+          )}
+          {element.id % 3 === 1 && (
+            <div 
+              className="rounded-full bg-gradient-to-br from-pink-400 to-orange-500"
+              style={{ width: `${element.size}px`, height: `${element.size}px` }}
+            />
+          )}
+          {element.id % 3 === 2 && (
+            <div 
+              className="transform rotate-45 bg-gradient-to-br from-green-400 to-cyan-500"
+              style={{ width: `${element.size}px`, height: `${element.size}px` }}
+            />
+          )}
+        </motion.div>
+      ))}
+
+      {/* Subtle floating particles */}
+      {particles.map((particle) => (
+        <motion.div
+          key={`particle-${particle.id}`}
+          className="absolute w-1 h-1 bg-gray-400/20 rounded-full"
+          style={{
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+          }}
+          animate={{
+            y: [-60, 60, -60],
+            x: [-30, 30, -30],
+            opacity: [0, 0.5, 0],
+          }}
+          transition={{
+            duration: particle.duration,
+            delay: particle.delay,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
       ))}
+
+      {/* Subtle grid pattern overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `
+            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '100px 100px',
+        }}
+      />
     </div>
   );
 }
