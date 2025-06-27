@@ -96,13 +96,6 @@ Scribble is a real-time collaborative whiteboard application built as a full-sta
 ```
 Changelog:
 - June 27, 2025. Initial setup
-- June 27, 2025. Complete conversion from TypeScript to JavaScript
-  - Converted all server files: index.ts → index.js, routes.ts → routes.js, storage.ts → storage.js, vite.ts → vite.js
-  - Converted all client files: main.tsx → main.jsx, App.tsx → App.jsx, and all component files from .tsx to .jsx
-  - Updated configuration files: vite.config.ts → vite.config.js, tailwind.config.ts → tailwind.config.js, drizzle.config.ts → drizzle.config.js
-  - Removed TypeScript dependencies and type annotations
-  - Updated components.json to use .jsx files instead of .tsx
-  - Removed tsconfig.json file as it's no longer needed
 ```
 
 ## User Preferences
