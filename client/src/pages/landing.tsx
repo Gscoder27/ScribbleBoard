@@ -4,7 +4,7 @@ import HeroSection from "@/components/hero-section";
 import FeaturesSection from "@/components/features-section";
 import DemoSection from "@/components/demo-section";
 import UseCasesSection from "@/components/use-cases-section";
-import TestimonialsSection from "@/components/testimonials-section";
+
 import PricingSection from "@/components/pricing-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
@@ -18,7 +18,6 @@ export default function Landing() {
       <FeaturesSection />
       <DemoSection />
       <UseCasesSection />
-      <TestimonialsSection />
       <PricingSection />
       <ContactSection />
       <Footer />

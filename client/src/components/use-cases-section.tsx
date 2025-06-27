@@ -72,7 +72,7 @@ export default function UseCasesSection() {
             Perfect for every team
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            From startups to enterprises, Scribble adapts to your workflow
+            From startups to enterprises, Scribble Board adapts to your workflow
           </p>
         </motion.div>
         

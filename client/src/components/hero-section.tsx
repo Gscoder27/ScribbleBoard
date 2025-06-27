@@ -17,7 +17,7 @@ export default function HeroSection() {
               Real-Time
             </span>
             <br />
-            with Scribble
+            with Scribble Board
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             The ultimate collaborative whiteboard tool with integrated chat. Brainstorm, design, and communicate seamlessly with your team, anywhere in the world.
@@ -32,13 +32,7 @@ export default function HeroSection() {
                 Start Collaborating
               </Button>
             </motion.div>
-            <motion.button
-              whileHover={{ color: "hsl(249, 88%, 67%)" }}
-              className="flex items-center text-gray-600 hover:text-primary transition-colors px-8 py-4 font-medium"
-            >
-              <i className="fas fa-play-circle mr-2 text-xl"></i>
-              Watch Demo
-            </motion.button>
+
           </div>
         </motion.div>
         

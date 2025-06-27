@@ -68,7 +68,7 @@ export default function ContactSection() {
             Ready to transform your team collaboration?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Join thousands of teams already using Scribble to create, collaborate, and communicate better.
+            Join thousands of teams already using Scribble Board to create, collaborate, and communicate better.
           </p>
         </motion.div>
         
@@ -174,7 +174,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why choose Scribble?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Why choose Scribble Board?</h3>
               <ul className="space-y-4">
                 {[
                   {
@@ -212,7 +212,7 @@ export default function ContactSection() {
                 </div>
                 <div className="flex items-center">
                   <i className="fas fa-envelope mr-3"></i>
-                  <span>hello@scribble.com</span>
+                  <span>hello@scribbleboard.com</span>
                 </div>
                 <div className="flex items-center">
                   <i className="fas fa-comments mr-3"></i>
