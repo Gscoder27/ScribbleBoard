@@ -57,11 +57,11 @@ export default function DemoSection() {
             </div>
           </div>
           
-          <div className="grid lg:grid-cols-4 h-96">
+          <div className="flex flex-col lg:grid lg:grid-cols-4 min-h-96">
             {/* Whiteboard Canvas */}
-            <div className="lg:col-span-3 drawing-canvas bg-white relative p-6">
+            <div className="lg:col-span-3 drawing-canvas bg-white relative p-4 sm:p-6 min-h-80 sm:min-h-96 order-1 lg:order-none">
               {/* Drawing Tools */}
-              <div className="absolute top-4 left-4 bg-white rounded-xl shadow-lg p-2 flex space-x-2">
+              <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-white rounded-xl shadow-lg p-2 flex flex-wrap gap-1 sm:gap-2 max-w-48 sm:max-w-none">
                 {[
                   { id: "pencil", icon: "fas fa-pencil-alt", active: activeTool === "pencil" },
                   { id: "eraser", icon: "fas fa-eraser", active: activeTool === "eraser" },
@@ -73,13 +73,13 @@ export default function DemoSection() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setActiveTool(tool.id)}
-                    className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
+                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-colors ${
                       tool.active
                         ? "bg-primary text-white"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                     }`}
                   >
-                    <i className={tool.icon}></i>
+                    <i className={`${tool.icon} text-xs sm:text-sm`}></i>
                   </motion.button>
                 ))}
               </div>
@@ -90,10 +90,10 @@ export default function DemoSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="absolute top-20 left-20 w-48 h-32 border-3 border-primary rounded-lg p-4"
+                className="absolute top-16 sm:top-20 left-4 sm:left-16 lg:left-20 w-36 sm:w-48 h-28 sm:h-32 border-2 sm:border-3 border-primary rounded-lg p-2 sm:p-4 bg-white shadow-sm"
               >
-                <h4 className="text-primary font-semibold mb-2">Project Goals</h4>
-                <ul className="text-sm text-gray-700 space-y-1">
+                <h4 className="text-primary font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Project Goals</h4>
+                <ul className="text-xs sm:text-sm text-gray-700 space-y-0.5 sm:space-y-1">
                   <li>• Improve user experience</li>
                   <li>• Increase engagement</li>
                   <li>• Launch by Q2</li>
@@ -105,11 +105,11 @@ export default function DemoSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="absolute top-32 right-20 w-40 h-40 bg-accent/10 rounded-full flex flex-col items-center justify-center border-2 border-accent"
+                className="absolute top-28 sm:top-32 right-4 sm:right-12 lg:right-20 w-28 sm:w-32 lg:w-40 h-28 sm:h-32 lg:h-40 bg-accent/10 rounded-full flex flex-col items-center justify-center border-2 border-accent"
               >
-                <i className="fas fa-target text-accent text-2xl mb-2"></i>
-                <span className="text-accent font-medium">Target</span>
-                <span className="text-accent text-sm">Audience</span>
+                <i className="fas fa-target text-accent text-lg sm:text-xl lg:text-2xl mb-1 sm:mb-2"></i>
+                <span className="text-accent font-medium text-xs sm:text-sm lg:text-base">Target</span>
+                <span className="text-accent text-xs sm:text-sm">Audience</span>
               </motion.div>
               
               <motion.div
@@ -117,19 +117,19 @@ export default function DemoSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.7 }}
-                className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-success/10 rounded-xl p-4 border-2 border-success min-w-48"
+                className="absolute bottom-12 sm:bottom-16 lg:bottom-20 left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 bg-success/10 rounded-xl p-3 sm:p-4 border-2 border-success w-40 sm:min-w-48 max-w-56"
               >
                 <div className="flex items-center space-x-2 mb-2">
-                  <i className="fas fa-check-circle text-success"></i>
-                  <span className="text-success font-semibold">Action Items</span>
+                  <i className="fas fa-check-circle text-success text-sm sm:text-base"></i>
+                  <span className="text-success font-semibold text-sm sm:text-base">Action Items</span>
                 </div>
-                <div className="text-sm text-gray-700 space-y-1">
+                <div className="text-xs sm:text-sm text-gray-700 space-y-1">
                   <div className="flex items-center space-x-2">
-                    <input type="checkbox" defaultChecked className="text-success rounded" />
+                    <input type="checkbox" defaultChecked className="text-success rounded w-3 h-3 sm:w-4 sm:h-4" />
                     <span>Research competitors</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <input type="checkbox" className="text-success rounded" />
+                    <input type="checkbox" className="text-success rounded w-3 h-3 sm:w-4 sm:h-4" />
                     <span>Create wireframes</span>
                   </div>
                 </div>
@@ -138,29 +138,29 @@ export default function DemoSection() {
               {/* Animated cursor */}
               <motion.div
                 animate={{ 
-                  x: [160, 180, 160],
-                  y: [160, 140, 160]
+                  x: [20, 40, 20],
+                  y: [20, 0, 20]
                 }}
                 transition={{ 
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute top-40 left-40 w-4 h-4"
+                className="absolute top-32 sm:top-36 lg:top-40 left-32 sm:left-36 lg:left-40 w-3 h-3 sm:w-4 sm:h-4 hidden sm:block"
               >
-                <i className="fas fa-mouse-pointer text-secondary"></i>
-                <div className="absolute -top-6 left-2 bg-secondary text-white text-xs rounded px-2 py-1 whitespace-nowrap">
+                <i className="fas fa-mouse-pointer text-secondary text-sm sm:text-base"></i>
+                <div className="absolute -top-5 sm:-top-6 left-1 sm:left-2 bg-secondary text-white text-xs rounded px-1 sm:px-2 py-1 whitespace-nowrap">
                   Sarah
                 </div>
               </motion.div>
             </div>
             
             {/* Chat Panel */}
-            <div className="bg-gray-50 border-l border-gray-200 flex flex-col">
-              <div className="p-4 border-b border-gray-200">
-                <h4 className="font-semibold text-gray-900">Team Chat</h4>
+            <div className="bg-gray-50 border-t lg:border-t-0 lg:border-l border-gray-200 flex flex-col min-h-64 lg:min-h-full order-2 lg:order-none">
+              <div className="p-3 sm:p-4 border-b border-gray-200">
+                <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Team Chat</h4>
               </div>
-              <div className="flex-1 p-4 space-y-3 overflow-y-auto">
+              <div className="flex-1 p-3 sm:p-4 space-y-2 sm:space-y-3 overflow-y-auto">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
