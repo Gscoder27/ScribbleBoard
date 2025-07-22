@@ -29,6 +29,11 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    proxy: {
+      // Proxy API requests to the backend
+      '/api': 'http://localhost:3000',
+      // You can add more proxies if needed
+    },
     fs: {
       strict: true,
       deny: ["**/.*"],

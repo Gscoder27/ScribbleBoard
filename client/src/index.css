@@ -66,11 +66,13 @@
     position: absolute;
     border-radius: 50%;
     background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
   
   .glass-effect {
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
@@ -108,5 +110,98 @@
     border-style: solid;
     border-width: 8px 0 8px 8px;
     border-color: transparent transparent transparent hsl(249, 88%, 67%);
-  }
+  }  
+}
+
+.menu_container {
+  position: absolute;
+  top: 32px; /* Gap from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #d2c6c6;
+  height: 60px;
+  width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  pointer-events: auto;
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1.5px 4px rgba(0,0,0,0.12); /* Shadow effect */
+}
+
+.menu-button{
+  width: 55px;
+  height: 55px;
+  background-color: #d2c6c6;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #b0a1a1;
+  border-radius: 8px;
+}
+
+.menu-button_active {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  background-color: #b0a1a1;
+}
+
+.whiteboard-canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: auto;
+  border: 1px solid black;
+  background-color: #f0f0f0;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #646cff;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #5a5fcf;
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #646cff;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #5a5fcf;
+  transform: scale(1.1);
 }

@@ -20,10 +20,11 @@ const features = [
     gradient: "from-secondary to-accent"
   },
   {
-    icon: "fas fa-th",
+    img: "/icons8-canvas-64.png",
+    icon: "",
     title: "Infinite Canvas",
     description: "Never run out of space. Pan, zoom, and explore your ideas without boundaries.",
-    gradient: "from-success to-primary"
+    bg: "bg-gray-100"
   },
   {
     icon: "fas fa-save",
@@ -65,15 +66,19 @@ export default function FeaturesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6 }}
               whileHover={{ 
                 y: -5,
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 cursor-pointer transition-all duration-300"
+              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 cursor-pointer transition-transform transition-shadow duration-100"
             >
-              <div className={`w-12 h-12 bg-gradient-to-br ${feature.gradient} rounded-lg flex items-center justify-center mb-4`}>
-                <i className={`${feature.icon} text-white text-xl`}></i>
+              <div className={`w-12 h-12 ${feature.bg || `bg-gradient-to-br ${feature.gradient}`} rounded-lg flex items-center justify-center mb-4`}>
+                {feature.img ? (
+                  <img src={feature.img} alt={feature.title} className="w-10 h-10 object-contain" />
+                ) : (
+                  <i className={`${feature.icon} text-white text-xl`}></i>
+                )}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>

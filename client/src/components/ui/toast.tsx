@@ -14,7 +14,7 @@ const ToastViewport = React.forwardRef<
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
-      "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]",
+      "fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:left-0 sm:top-auto sm:flex-col md:max-w-[420px]",
       className
     )}
     {...props}
@@ -48,7 +48,31 @@ const Toast = React.forwardRef<
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
       {...props}
-    />
+    >
+      {props.children}
+      {/* Animated progress bar at the bottom */}
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          bottom: 0,
+          height: '4px',
+          width: '100%',
+          background: 'rgba(0,0,0,0.08)',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          className="toast-progress-bar"
+          style={{
+            height: '100%',
+            width: '100%',
+            background: 'linear-gradient(90deg, #6366f1 0%, #60a5fa 100%)',
+            animation: 'toast-progress-bar-anim 3.5s linear forwards',
+          }}
+        />
+      </div>
+    </ToastPrimitives.Root>
   )
 })
 Toast.displayName = ToastPrimitives.Root.displayName
@@ -124,4 +148,16 @@ export {
   ToastDescription,
   ToastClose,
   ToastAction,
+}
+
+// Add keyframes for the progress bar animation
+if (typeof window !== 'undefined') {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes toast-progress-bar-anim {
+      from { width: 100%; }
+      to { width: 0%; }
+    }
+  `;
+  document.head.appendChild(style);
 }

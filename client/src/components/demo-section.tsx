@@ -125,11 +125,11 @@ export default function DemoSection() {
                 </div>
                 <div className="text-xs sm:text-sm text-gray-700 space-y-1">
                   <div className="flex items-center space-x-2">
-                    <input type="checkbox" defaultChecked className="text-success rounded w-3 h-3 sm:w-4 sm:h-4" />
+                    <input type="checkbox" defaultChecked className="text-success rounded w-3 h-3 sm:w-4 sm:h-4" title="Research competitors" />
                     <span>Research competitors</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <input type="checkbox" className="text-success rounded w-3 h-3 sm:w-4 sm:h-4" />
+                    <input type="checkbox" className="text-success rounded w-3 h-3 sm:w-4 sm:h-4" title="Create wireframes" />
                     <span>Create wireframes</span>
                   </div>
                 </div>

@@ -36,12 +36,22 @@ export async function setupVite(app: Express, server: Server) {
         process.exit(1);
       },
     },
-    server: serverOptions,
+    server: {
+      ...serverOptions,
+      allowedHosts: undefined, // Fix: allowedHosts must be true | string[] | undefined, not boolean
+    },
     appType: "custom",
   });
 
   app.use(vite.middlewares);
-  app.use("*", async (req, res, next) => {
+  
+  // Handle SPA routing - serve index.html for all non-API routes
+  app.use(async (req, res, next) => {
+    // Skip if it's an API route or static file
+    if (req.path.startsWith('/api') || req.path.includes('.')) {
+      return next();
+    }
+
     const url = req.originalUrl;
 
     try {
@@ -79,7 +89,11 @@ export function serveStatic(app: Express) {
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
+  app.use((req, res) => {
+    // Skip if it's an API route or static file
+    if (req.path.startsWith('/api') || req.path.includes('.')) {
+      return res.status(404).send('Not found');
+    }
     res.sendFile(path.resolve(distPath, "index.html"));
   });
 }

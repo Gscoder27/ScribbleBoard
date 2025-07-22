@@ -1,0 +1,10 @@
+export const actions = {
+  DRAWING: 'DRAWING',
+  IDLE: "IDLE",
+  WRITING:'WRITING',
+  DOWNLOAD:'DOWNLOAD',
+  REDO:'REDO',
+  UNDO:'UNDO',
+  SHARE:'SHARE',
+  MOVING:'MOVING',
+};

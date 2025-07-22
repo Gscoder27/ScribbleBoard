@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 export default function HeroSection() {
+  const [, navigate] = useLocation();
   return (
     <section className="relative z-10 pt-20 pb-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -27,7 +29,7 @@ export default function HeroSection() {
               whileHover={{ y: -2, boxShadow: "0 10px 20px rgba(99, 102, 241, 0.3)" }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button className="bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg">
+              <Button className="bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg" onClick={() => navigate('/sboard')}>
                 <i className="fas fa-rocket mr-2"></i>
                 Start Collaborating
               </Button>

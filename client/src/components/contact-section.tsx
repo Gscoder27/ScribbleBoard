@@ -208,7 +208,7 @@ export default function ContactSection() {
               <div className="space-y-3">
                 <div className="flex items-center">
                   <i className="fas fa-phone mr-3"></i>
-                  <span>+1 (555) 123-4567</span>
+                  <span>+91 856 123 4567</span>
                 </div>
                 <div className="flex items-center">
                   <i className="fas fa-envelope mr-3"></i>

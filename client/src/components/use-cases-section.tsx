@@ -29,13 +29,14 @@ const useCases = [
     iconBg: "bg-secondary"
   },
   {
-    icon: "fas fa-edit",
+    img: "/icons8-create-icon-94.png", // Add this line
+    icon: "", // Or null
     title: "Design Systems",
     description: "Build and iterate on wireframes, user flows, and design concepts together.",
     tags: ["UX Teams", "Design"],
     gradient: "from-success/5 to-primary/5",
     border: "border-success/10",
-    iconBg: "bg-success"
+    iconBg: "bg-gray-100"
   },
   {
     icon: "fas fa-handshake",
@@ -83,11 +84,19 @@ export default function UseCasesSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`bg-gradient-to-br ${useCase.gradient} rounded-xl p-6 border ${useCase.border}`}
+              transition={{ duration: 0.6 }}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              className={`bg-gradient-to-br ${useCase.gradient} rounded-xl p-6 border ${useCase.border} cursor-pointer transition-transform transition-shadow duration-100`}
             >
               <div className={`w-12 h-12 ${useCase.iconBg} rounded-lg flex items-center justify-center mb-4`}>
-                <i className={`${useCase.icon} text-white text-xl`}></i>
+                {useCase.img ? (
+                  <img src={useCase.img} alt={useCase.title} className="w-10 h-10 object-contain" />
+                ) : (
+                  <i className={`${useCase.icon} text-white text-xl`}></i>
+                )}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">{useCase.title}</h3>
               <p className="text-gray-600 mb-4">{useCase.description}</p>
@@ -95,7 +104,13 @@ export default function UseCasesSection() {
                 {useCase.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className={`px-3 py-1 ${useCase.iconBg.includes('gradient') ? 'bg-primary/10 text-primary' : `${useCase.iconBg.replace('bg-', 'bg-')}/10 ${useCase.iconBg.replace('bg-', 'text-')}`} text-sm rounded-full`}
+                    className={`px-3 py-1 ${
+                      useCase.title === 'Design Systems'
+                        ? 'bg-accent/10 text-accent'
+                        : useCase.iconBg.includes('gradient')
+                          ? 'bg-primary/10 text-primary'
+                          : `${useCase.iconBg.replace('bg-', 'bg-')}/10 ${useCase.iconBg.replace('bg-', 'text-')}`
+                    } text-sm rounded-full`}
                   >
                     {tag}
                   </span>

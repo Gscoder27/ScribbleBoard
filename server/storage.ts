@@ -1,4 +1,10 @@
 import { users, type User, type InsertUser } from "@shared/schema";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const STORAGE_PATH = path.join(__dirname, "storage.json");
 
 // modify the interface with any CRUD methods
 // you might need
@@ -37,3 +43,36 @@ export class MemStorage implements IStorage {
 }
 
 export const storage = new MemStorage();
+
+export function loadAppStorage() {
+  if (!fs.existsSync(STORAGE_PATH)) {
+    return { 
+      validRooms: [], 
+      chatMessages: {}, 
+      roomHosts: {},
+      whiteboardStates: {} 
+    };
+  }
+  try {
+    const data = JSON.parse(fs.readFileSync(STORAGE_PATH, "utf-8"));
+    // Ensure all required properties exist
+    return {
+      validRooms: data.validRooms || [],
+      chatMessages: data.chatMessages || {},
+      roomHosts: data.roomHosts || {},
+      whiteboardStates: data.whiteboardStates || {}
+    };
+  } catch (e) {
+    return { 
+      validRooms: [], 
+      chatMessages: {}, 
+      roomHosts: {},
+      whiteboardStates: {} 
+    };
+  }
+}
+
+export function saveAppStorage(data: any) {
+  console.log("Saving to storage.json...");
+  fs.writeFileSync(STORAGE_PATH, JSON.stringify(data, null, 2), "utf-8");
+}
