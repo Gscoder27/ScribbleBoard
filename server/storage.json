@@ -8061,6 +8061,13 @@
         "message": "Pappu joined the room",
         "timestamp": 1753199716027,
         "system": true
+      },
+      {
+        "id": "system-disconnect-1753200323583",
+        "user": "Goli",
+        "message": "Goli left the room",
+        "timestamp": 1753200323584,
+        "system": true
       }
     ]
   },
