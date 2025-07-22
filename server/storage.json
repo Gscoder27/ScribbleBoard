@@ -8026,6 +8026,41 @@
         "message": "Goli joined the room",
         "timestamp": 1753196831740,
         "system": true
+      },
+      {
+        "id": "system-disconnect-1753199383150",
+        "user": "Goli",
+        "message": "Goli left the room",
+        "timestamp": 1753199383150,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753199389470",
+        "user": "Gurri",
+        "message": "Gurri left the room",
+        "timestamp": 1753199389470,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753199394049",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753199394049,
+        "system": true
+      },
+      {
+        "id": "system-join-1753199714026",
+        "user": "Goli",
+        "message": "Goli joined the room",
+        "timestamp": 1753199714026,
+        "system": true
+      },
+      {
+        "id": "system-join-1753199716024",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753199716027,
+        "system": true
       }
     ]
   },
