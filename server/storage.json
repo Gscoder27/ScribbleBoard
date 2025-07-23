@@ -8376,6 +8376,27 @@
         "message": "Sonu joined the room",
         "timestamp": 1753248076597,
         "system": true
+      },
+      {
+        "id": "system-disconnect-1753250322393",
+        "user": "Gurri",
+        "message": "Gurri left the room",
+        "timestamp": 1753250322397,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753250322449",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753250322449,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753250322460",
+        "user": "Sonu",
+        "message": "Sonu left the room",
+        "timestamp": 1753250322460,
+        "system": true
       }
     ]
   },
