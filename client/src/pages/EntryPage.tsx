@@ -71,37 +71,6 @@ const HomePage = () => {
   };
 
   const joinRoom = () => {
-    // const socket = getSocket();
-  //   if (!socket) return;
-  //   socket.emit("join-request", { userName, roomId: joinRoomCode });
-
-  //   // Show blur + modal
-  // setIsWaitingForApproval(true);
-
-  // socket.once("waiting-for-approval", () => {
-  //   // just keep showing the waiting UI
-  // });
-
-  // socket.once("join-response", ({ approved }) => {
-  //   setIsWaitingForApproval(false);
-  //   if (approved) {
-  //     const tabId = sessionStorage.getItem("sb_tab_id");
-  //     sessionStorage.setItem('sb_user', JSON.stringify({
-  //       name: userName,
-  //       roomId: joinRoomCode,
-  //       isHost: false,
-  //       tabId,
-  //     }));
-  //     navigate(`/whiteboard/${joinRoomCode}`);
-  //   } else {
-  //     toast({
-  //       title: "Rejected",
-  //       description: "Your join request was rejected by the host.",
-  //       variant: "destructive",
-  //     });
-  //   }
-  // });
-
     clickSound.currentTime = 0;
     clickSound.play();
     if (!userName.trim()) {
@@ -123,20 +92,43 @@ const HomePage = () => {
     const tabId = sessionStorage.getItem('sb_tab_id');
     sessionStorage.setItem('sb_user', JSON.stringify({ name: userName, roomId: joinRoomCode, isHost: false, tabId }));
     console.log('Join Room: isHost = false');
-    // Listen for room-error event
     const socket = getSocket();
-    if (!socket) return; // Ensure socket is not null
-    socket.once('room-error', (msg: string) => {
+    if (!socket) return;
+    setIsWaitingForApproval(true);
+    socket.emit("join-request", { userName, roomId: joinRoomCode });
+    socket.once("waiting-for-approval", () => {
+      // just keep showing the waiting UI
+    });
+    socket.once("join-response", ({ approved }) => {
+      setIsWaitingForApproval(false);
+      if (approved) {
+        const tabId = sessionStorage.getItem("sb_tab_id");
+        sessionStorage.setItem('sb_user', JSON.stringify({
+          name: userName,
+          roomId: joinRoomCode,
+          isHost: false,
+          tabId,
+        }));
+        navigate(`/whiteboard/${joinRoomCode}`);
+      } else {
+        toast({
+          title: "Rejected",
+          description: "Your join request was rejected by the host.",
+          variant: "destructive",
+        });
+        sessionStorage.removeItem('sb_user');
+      }
+    });
+    socket.once('room-error', (msg) => {
+      setIsWaitingForApproval(false);
       toast({
         title: 'Room not found',
         description: msg,
         variant: 'destructive',
       });
-      // Remove sb_user so user can try again
       sessionStorage.removeItem('sb_user');
       navigate('/');
     });
-    navigate(`/whiteboard/${joinRoomCode}`);
   };
 
   return (

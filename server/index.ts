@@ -79,7 +79,40 @@ app.use((req, res, next) => {
     let userName: string | null = null;
     let isHost: boolean = false;
 
-    // Join room
+    // Join request approval system
+    socket.on('join-request', ({ userName, roomId }) => {
+      // Only allow join requests for existing rooms
+      if (!validRooms.includes(roomId)) {
+        socket.emit('room-error', 'No such room exists. Either enter a valid code or create your new room.');
+        return;
+      }
+      // Find host socket for the room
+      const hostName = roomHosts[roomId];
+      const hostSocketId = roomUsers[roomId]?.find(u => u.name === hostName)?.id;
+      if (!hostSocketId) {
+        socket.emit('room-error', 'Host is not available. Try again later.');
+        return;
+      }
+      // Notify host of join request
+      io.to(hostSocketId).emit('approve-user-request', {
+        userId: socket.id,
+        userName,
+        roomId
+      });
+      // Tell joining user to wait
+      socket.emit('waiting-for-approval');
+    });
+
+    // Host responds to join request
+    socket.on('host-response', ({ userId, approved }) => {
+      if (!joinedRoomId || !userName || !isHost) return;
+      // Only allow host to approve/reject
+      const hostName = roomHosts[joinedRoomId];
+      if (userName !== hostName) return;
+      io.to(userId).emit('join-response', { approved });
+    });
+
+    // Join room (bypasses approval for host, or after approval for guests)
     socket.on('join-room', (roomId: string, userNameParam: string, isHostParam: boolean) => {
       console.log(`[join-room] user: ${userNameParam}, roomId: ${roomId}, isHost: ${isHostParam}, validRooms: ${validRooms.join(',')}`);
       
