@@ -2,8 +2,19 @@ import express, { type Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { Server as SocketIOServer } from "socket.io";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+// import { setupVite, serveStatic, log } from "./vite";
 import { loadAppStorage, saveAppStorage } from "./storage";
+
+// Utility logging function
+function log(message: string) {
+  const formattedTime = new Date().toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+  console.log(`${formattedTime} [server] ${message}`);
+}
 
 // Whiteboard element type
 type WhiteboardElement = { id: string; [key: string]: any };
@@ -12,7 +23,11 @@ type WhiteboardElement = { id: string; [key: string]: any };
 const whiteboardStates: { [roomId: string]: WhiteboardElement[] } = {};
 
 // Persistent storage for rooms, messages, hosts, and whiteboard states
-let { validRooms, chatMessages, roomHosts, whiteboardStates: savedWhiteboardStates } = loadAppStorage();
+let { validRooms, 
+  chatMessages, 
+  roomHosts, 
+  whiteboardStates: savedWhiteboardStates
+ } = loadAppStorage();
 if (!Array.isArray(validRooms)) validRooms = [];
 if (!chatMessages) chatMessages = {};
 if (!roomHosts) roomHosts = {};
@@ -25,7 +40,7 @@ Object.assign(whiteboardStates, savedWhiteboardStates);
 const roomUsers: { [roomId: string]: Array<{ id: string; name: string; isHost: boolean }> } = {};
 
 const app = express();
-console.log("Server running in", app.get("env"), "mode");
+// console.log("Server running in", app.get("env"), "mode");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -51,7 +66,7 @@ app.use((req, res, next) => {
       if (logLine.length > 80) {
         logLine = logLine.slice(0, 79) + "…";
       }
-
+      // const log = console.log;
       log(logLine);
     }
   });
@@ -61,6 +76,7 @@ app.use((req, res, next) => {
 
 (async () => {
   const httpServer = await registerRoutes(app);
+  await registerRoutes(app);
   
   // Create Socket.IO server
   const io = new SocketIOServer(httpServer, {
@@ -381,23 +397,25 @@ app.use((req, res, next) => {
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    console.log("Using Vite middleware for frontend (dev mode)");
-    await setupVite(app, httpServer);
-  } else {
-    console.log("Serving static files (production mode)");
-    serveStatic(app);
-  }
+  // if (app.get("env") === "development") {
+  //   console.log("Using Vite middleware for frontend (dev mode)");
+  //   await setupVite(app, httpServer);
+  // } else {
+  //   console.log("Serving static files (production mode)");
+  //   serveStatic(app);
+  // }
 
   // Serve the app on port 3000
   // this serves both the API and the client.
-  const port = 3000;
+  // const port = 3000;
+  const port = process.env.PORT || 3000;
   httpServer.listen({
     port,
     host: "0.0.0.0",
     reusePort: true,
   }, () => {
-    log(`serving on port ${port}`);
+    // const log = console.log;
+    log(`Server running in ${app.get("env")} mode on port ${port}`);
   });
 })();
 
