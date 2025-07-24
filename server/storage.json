@@ -8397,6 +8397,167 @@
         "message": "Sonu left the room",
         "timestamp": 1753250322460,
         "system": true
+      },
+      {
+        "id": "system-join-1753260147747",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753260147748,
+        "system": true
+      },
+      {
+        "id": "system-join-1753260177592",
+        "user": "Sonu",
+        "message": "Sonu joined the room",
+        "timestamp": 1753260177592,
+        "system": true
+      },
+      {
+        "id": "system-join-1753260177846",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753260177848,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753260849621",
+        "user": "Sonu",
+        "message": "Sonu left the room",
+        "timestamp": 1753260849624,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753260854988",
+        "user": "Gurri",
+        "message": "Gurri left the room",
+        "timestamp": 1753260854988,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753260965664",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753260965671,
+        "system": true
+      },
+      {
+        "id": "system-join-1753278354355",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753278354355,
+        "system": true
+      },
+      {
+        "id": "system-join-1753278364509",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753278364509,
+        "system": true
+      },
+      {
+        "id": "system-join-1753278365076",
+        "user": "Sonu",
+        "message": "Sonu joined the room",
+        "timestamp": 1753278365076,
+        "system": true
+      },
+      {
+        "id": "system-leave-1753278454185",
+        "user": "Sonu",
+        "message": "Sonu left the room",
+        "timestamp": 1753278454185,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753278464623",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753278464623,
+        "system": true
+      },
+      {
+        "id": "system-join-1753278472976",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753278472976,
+        "system": true
+      },
+      {
+        "id": "system-join-1753278490572",
+        "user": "Goli",
+        "message": "Goli joined the room",
+        "timestamp": 1753278490572,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753279079006",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753279079012,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753288410733",
+        "user": "Gurri",
+        "message": "Gurri left the room",
+        "timestamp": 1753288410739,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753288410839",
+        "user": "Goli",
+        "message": "Goli left the room",
+        "timestamp": 1753288410840,
+        "system": true
+      },
+      {
+        "id": "system-join-1753345465307",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753345465307,
+        "system": true
+      },
+      {
+        "id": "system-join-1753345475850",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753345475850,
+        "system": true
+      },
+      {
+        "id": "system-join-1753349646444",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753349646444,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753351229300",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753351229303,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753351234966",
+        "user": "Gurri",
+        "message": "Gurri left the room",
+        "timestamp": 1753351234966,
+        "system": true
+      },
+      {
+        "id": "system-join-1753352621592",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753352621592,
+        "system": true
+      },
+      {
+        "id": "system-join-1753352623540",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753352623540,
+        "system": true
       }
     ]
   },
@@ -8442,5 +8603,43 @@
     "oogl08-lodd-kt5": "jassi",
     "c8pa5c-a2n9-wa7": "Guru",
     "b8ozi4-5387-jox": "Gurri"
+  },
+  "whiteboardStates": {
+    "owldjr-t3k5-kvi": [],
+    "s8a27u-8i66-6m5": [],
+    "v6pfym-pef8-8cs": [],
+    "axdg2c-kamc-whj": [],
+    "b3p6qb-hypp-9cy": [],
+    "uonjkk-vt84-qk3": [],
+    "bzjgiu-qh13-rj9": [],
+    "5btfy6-vqzd-26t": [],
+    "leeeo3-xet0-tr6": [],
+    "1zubt5-lr81-f9i": [],
+    "hsob9g-e56h-e02": [],
+    "tup3il-te4l-kr3": [],
+    "o8qm14-h062-b6u": [],
+    "tpfho9-dqlm-sh4": [],
+    "lin739-uxvs-oty": [],
+    "21a5kn-6bvs-qo7": [],
+    "u0p0yj-5cb3-m4s": [],
+    "ogq0k7-qb0g-3uq": [],
+    "3x8p4f-1h0k-xkn": [],
+    "zonxdt-bnmp-9sx": [],
+    "0ncc2t-fqb6-nvn": [],
+    "17xjwp-r7ix-v9f": [],
+    "rgz3jw-0j56-pma": [],
+    "01op7f-qbck-zyu": [],
+    "oldlow-6zhp-z6n": [],
+    "a7hcgl-s3tq-04g": [],
+    "8h1lhs-bpc4-r00": [],
+    "rt7fx8-dl1f-mn0": [],
+    "ut3jek-zxd6-zp9": [],
+    "uskwx3-l2vz-fqh": [],
+    "8hpsz1-u3c4-7fd": [],
+    "6mbwa0-jedh-5xt": [],
+    "4pnc30-gv2a-irt": [],
+    "gow7uh-248v-w1l": [],
+    "00lsod-8lux-x30": [],
+    "b8ozi4-5387-jox": []
   }
 }
