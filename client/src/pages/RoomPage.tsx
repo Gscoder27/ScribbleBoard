@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
-import ChatPanel, { ChatMessage } from '@/components/ChatPanel';
+import ChatPanel, { type ChatMessage } from '@/components/ChatPanel';
 import { MessageCircle } from 'lucide-react';
 import { getSocket } from '@/lib/socketConn';
 import { toast } from '@/hooks/use-toast';

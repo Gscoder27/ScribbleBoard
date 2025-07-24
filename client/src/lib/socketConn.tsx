@@ -13,8 +13,7 @@ export const getSocket = () => socket;
 export const connectWithSocketServer = (): void => {
   if (socket) return;                        // already connected
 
-  // socket = io('http://localhost:3000');      // ← ensure this matches your server port
-  socket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:3000');
+  socket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:3000');      // ← use environment variable for production
 
   socket.on('connect', () => {
     console.log('✅ Connected to socket.io server');

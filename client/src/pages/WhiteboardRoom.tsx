@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'wouter';
 import Whiteboard from '../components/Whiteboard/board/Whiteboard';
-import ChatPanel, { ChatMessage } from '@/components/ChatPanel';
+import ChatPanel, { type ChatMessage } from '@/components/ChatPanel';
 import { MessageCircle, Users, LogOut } from 'lucide-react';
 import { getSocket } from '@/lib/socketConn';
 import { Provider } from 'react-redux';
 import { store } from '../components/Whiteboard/store/store';
 import { toast } from '@/hooks/use-toast';
-import JoinRequestModal, { JoinRequest } from '../components/joinRequestModal.tsx';
+import JoinRequestModal, { type JoinRequest } from '../components/joinRequestModal.tsx';
 
 
 const WhiteboardRoom = () => {
