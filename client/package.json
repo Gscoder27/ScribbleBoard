@@ -15,6 +15,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-toast": "^1.2.14",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/cli": "^4.1.11",
