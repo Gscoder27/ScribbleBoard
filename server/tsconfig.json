@@ -3,13 +3,17 @@
     "target": "ES2020",
     "module": "ESNext",
     "moduleResolution": "Node",
+    "rootDir": ".",                      // ✅ includes both src and ../shared
     "outDir": "./dist",
-    "rootDir": "../",                           // <--- allows access to ../shared
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",                      // ✅ base for paths
+    "paths": {
+      "shared/*": ["./shared/*"]
+    }
   },
-  "include": ["src", "../shared"],             // <--- include shared folder
+  "include": ["src", "shared"],       // ✅ includes shared code
   "exclude": ["dist", "node_modules"]
 }
