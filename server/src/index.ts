@@ -1,5 +1,8 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { createServer, type Server } from "http";
+// import { createServer, type Server } from "http";
+import http from "http"; // default import
+
+import cors from 'cors';
 import { Server as SocketIOServer } from "socket.io";
 import { registerRoutes } from "./routes.js";
 // import { setupVite, serveStatic, log } from "./vite";
@@ -15,6 +18,13 @@ function log(message: string) {
   });
   console.log(`${formattedTime} [server] ${message}`);
 }
+
+console.log("✅ Running index.ts");
+
+
+// app.get("/", (req, res) => {
+//   res.send("✅ Server is working! Welcome to ScribbleBoard Server.");
+// });
 
 // Whiteboard element type
 type WhiteboardElement = { id: string; [key: string]: any };
@@ -40,8 +50,20 @@ Object.assign(whiteboardStates, savedWhiteboardStates);
 const roomUsers: { [roomId: string]: Array<{ id: string; name: string; isHost: boolean }> } = {};
 
 const app = express();
+app.use(cors());
+const server = http.createServer(app);
+const io = new SocketIOServer(server, {
+  cors: { origin: "*" },
+});
+
 // console.log("Server running in", app.get("env"), "mode");
 app.use(express.json());
+
+// ✅ THIS is important
+app.get("/", (req, res) => {
+  res.send("ScribbleBoard Server is running 🚀");
+});
+
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req: Request, res: Response, next: NextFunction) => {
