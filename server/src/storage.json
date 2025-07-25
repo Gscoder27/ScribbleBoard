@@ -31,112 +31,105 @@
         "message": "Gurri left the room",
         "timestamp": 1753417330231,
         "system": true
+      },
+      {
+        "id": "system-join-1753428761178",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753428761188,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753428765804",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753428765805,
+        "system": true
+      },
+      {
+        "id": "system-join-1753428768357",
+        "user": "Prem",
+        "message": "Prem joined the room",
+        "timestamp": 1753428768358,
+        "system": true
+      },
+      {
+        "id": "system-join-1753428771542",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753428771542,
+        "system": true
+      },
+      {
+        "id": "system-join-1753428880413",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753428880419,
+        "system": true
+      },
+      {
+        "id": "system-join-1753428889245",
+        "user": "Prem",
+        "message": "Prem joined the room",
+        "timestamp": 1753428889245,
+        "system": true
+      },
+      {
+        "id": "Prem-1753428892256",
+        "user": "Prem",
+        "message": "hi",
+        "timestamp": 1753428892256
+      },
+      {
+        "id": "Gurri-1753428900867",
+        "user": "Gurri",
+        "message": "all good!",
+        "timestamp": 1753428900867
+      },
+      {
+        "id": "Prem-1753428904530",
+        "user": "Prem",
+        "message": "yup",
+        "timestamp": 1753428904530
+      },
+      {
+        "id": "system-join-1753428909443",
+        "user": "Prem",
+        "message": "Prem joined the room",
+        "timestamp": 1753428909444,
+        "system": true
+      },
+      {
+        "id": "system-join-1753428910383",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753428910383,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753429152201",
+        "user": "Gurri",
+        "message": "Gurri left the room",
+        "timestamp": 1753429152201,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753429152438",
+        "user": "Prem",
+        "message": "Prem left the room",
+        "timestamp": 1753429152439,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753429152468",
+        "user": "Pappu",
+        "message": "Pappu left the room",
+        "timestamp": 1753429152470,
+        "system": true
       }
     ]
   },
   "roomHosts": {
     "b8ozi4-5387-jox": "Gurri"
-  },
-  "whiteboardStates": {
-    "owldjr-t3k5-kvi": [],
-    "s8a27u-8i66-6m5": [],
-    "v6pfym-pef8-8cs": [],
-    "axdg2c-kamc-whj": [],
-    "b3p6qb-hypp-9cy": [],
-    "uonjkk-vt84-qk3": [],
-    "bzjgiu-qh13-rj9": [],
-    "5btfy6-vqzd-26t": [],
-    "leeeo3-xet0-tr6": [],
-    "1zubt5-lr81-f9i": [],
-    "hsob9g-e56h-e02": [],
-    "tup3il-te4l-kr3": [],
-    "o8qm14-h062-b6u": [],
-    "tpfho9-dqlm-sh4": [],
-    "lin739-uxvs-oty": [],
-    "21a5kn-6bvs-qo7": [],
-    "u0p0yj-5cb3-m4s": [],
-    "ogq0k7-qb0g-3uq": [],
-    "3x8p4f-1h0k-xkn": [],
-    "zonxdt-bnmp-9sx": [],
-    "0ncc2t-fqb6-nvn": [],
-    "17xjwp-r7ix-v9f": [],
-    "rgz3jw-0j56-pma": [],
-    "01op7f-qbck-zyu": [],
-    "oldlow-6zhp-z6n": [],
-    "a7hcgl-s3tq-04g": [],
-    "8h1lhs-bpc4-r00": [],
-    "rt7fx8-dl1f-mn0": [],
-    "ut3jek-zxd6-zp9": [],
-    "uskwx3-l2vz-fqh": [],
-    "8hpsz1-u3c4-7fd": [],
-    "6mbwa0-jedh-5xt": [],
-    "4pnc30-gv2a-irt": [],
-    "gow7uh-248v-w1l": [],
-    "00lsod-8lux-x30": [],
-    "b8ozi4-5387-jox": [
-      {
-        "id": "fca0ac5a-77c0-4fa3-a354-030b27be334a",
-        "type": "PEN",
-        "x1": 425,
-        "y1": 197,
-        "x2": 425,
-        "y2": 197,
-        "seed": 2039753714,
-        "strokeColor": "#000000",
-        "strokeWidth": 2,
-        "userId": "Pappu",
-        "points": [
-          {
-            "x": 425,
-            "y": 197
-          },
-          {
-            "x": 441,
-            "y": 224
-          },
-          {
-            "x": 481,
-            "y": 226
-          },
-          {
-            "x": 458,
-            "y": 207
-          },
-          {
-            "x": 462,
-            "y": 210
-          },
-          {
-            "x": 465,
-            "y": 215
-          },
-          {
-            "x": 467,
-            "y": 218
-          },
-          {
-            "x": 468,
-            "y": 222
-          },
-          {
-            "x": 469,
-            "y": 226
-          },
-          {
-            "x": 470,
-            "y": 230
-          },
-          {
-            "x": 470,
-            "y": 232
-          },
-          {
-            "x": 471,
-            "y": 232
-          }
-        ],
-        "isFinal": true
-      }
-    ]
   }
 }
