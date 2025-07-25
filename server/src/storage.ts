@@ -1,4 +1,4 @@
-import { users, type User, type InsertUser } from "../shared/schema";
+import { users, type User, type InsertUser } from "../shared/schema.js";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";

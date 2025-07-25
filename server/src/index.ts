@@ -1,9 +1,9 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { Server as SocketIOServer } from "socket.io";
-import { registerRoutes } from "./routes";
+import { registerRoutes } from "./routes.js";
 // import { setupVite, serveStatic, log } from "./vite";
-import { loadAppStorage, saveAppStorage } from "./storage";
+import { loadAppStorage, saveAppStorage } from "./storage.js";
 
 // Utility logging function
 function log(message: string) {
