@@ -4,16 +4,12 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "outDir": "./dist",
-    "rootDir": ".",                           // ✅ fixes TS6059 warning
+    "rootDir": "../",                           // <--- allows access to ../shared
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",                           // ✅ enables aliasing
-    "paths": {
-      "shared/*": ["../shared/*"]             // ✅ allows import "shared/xyz"
-    }
+    "skipLibCheck": true
   },
-  "include": ["src", "../shared"],            // ✅ include both source & schema
+  "include": ["src", "../shared"],             // <--- include shared folder
   "exclude": ["dist", "node_modules"]
 }
