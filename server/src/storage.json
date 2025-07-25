@@ -1,0 +1,40 @@
+{
+  "validRooms": [
+    "b8ozi4-5387-jox"
+  ],
+  "chatMessages": {
+    "b8ozi4-5387-jox": [
+      {
+        "id": "system-created-1753416623180",
+        "user": "Gurri",
+        "message": "Gurri created the room",
+        "timestamp": 1753416623180,
+        "system": true
+      },
+      {
+        "id": "system-join-1753416623180",
+        "user": "Gurri",
+        "message": "Gurri joined the room",
+        "timestamp": 1753416623180,
+        "system": true
+      },
+      {
+        "id": "system-join-1753416623216",
+        "user": "Pappu",
+        "message": "Pappu joined the room",
+        "timestamp": 1753416623216,
+        "system": true
+      },
+      {
+        "id": "system-disconnect-1753417330228",
+        "user": "Gurri",
+        "message": "Gurri left the room",
+        "timestamp": 1753417330231,
+        "system": true
+      }
+    ]
+  },
+  "roomHosts": {
+    "b8ozi4-5387-jox": "Gurri"
+  }
+}

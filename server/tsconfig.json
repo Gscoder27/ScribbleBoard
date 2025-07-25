@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "CommonJS",
-    
-    "rootDir": "../",                            // Include all source + shared
-    "outDir": "./dist",
+    "module": "ESNext",                             // ✅ enables import.meta.url
     "moduleResolution": "Node",
+    "outDir": "./dist",
+    "rootDir": "../",                               // ✅ shared + server/src
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "baseUrl": ".",                            // Enables custom path aliases
+    "baseUrl": ".",                                 // ✅ path alias support
     "paths": {
-      "shared/*": ["../shared/*"]              // Alias "shared" points to ../shared
+      "shared/*": ["../shared/*"]                   // ✅ alias for shared
     }
   },
-  "include": ["src", "../shared"],             // Include both code and schema
+  "include": ["src", "../shared"],                  // ✅ includes both
   "exclude": ["dist", "node_modules"]
 }

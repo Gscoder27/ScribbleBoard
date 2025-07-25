@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:server": "cross-env NODE_ENV=development tsx server/index.ts",
+    "dev:server": "cross-env NODE_ENV=development tsx server/src/index.ts",
     "dev:client": "vite",
     "tailwind:watch": "npx @tailwindcss/cli -i ./client/src/input.css -o ./client/src/output.css --watch",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
