@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "ESNext",                             // ✅ enables import.meta.url
+    "module": "ESNext",
     "moduleResolution": "Node",
     "outDir": "./dist",
-    "rootDir": "../",                               // ✅ shared + server/src
+    "rootDir": ".",                           // ✅ fixes TS6059 warning
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "baseUrl": ".",                                 // ✅ path alias support
+    "baseUrl": ".",                           // ✅ enables aliasing
     "paths": {
-      "shared/*": ["../shared/*"]                   // ✅ alias for shared
+      "shared/*": ["../shared/*"]             // ✅ allows import "shared/xyz"
     }
   },
-  "include": ["src", "../shared"],                  // ✅ includes both
+  "include": ["src", "../shared"],            // ✅ include both source & schema
   "exclude": ["dist", "node_modules"]
 }
